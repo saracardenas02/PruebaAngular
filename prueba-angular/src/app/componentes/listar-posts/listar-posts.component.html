@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header">
+    Posts
+  </div>
+  <div class="card-body">
+
+    <div class="table-responsive">
+      <table class="table table-primary">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Body</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Post of Posts; let iControl = index">
+            <td scope="row">{{Post.id}}</td>
+            <td>{{Post.title}}</td>
+            <td>{{Post.body}}</td>
+            <td>
+              <a routerLink="/editar-post/{{Post.id}}"  class="btn btn-warning">Edit</a> |
+              <a (click)="borrarRegistro(Post.id, iControl)" class="btn btn-danger">Delete</a> |
+              <a routerLink="/crear-comentario/{{Post.id}}" class="btn btn-primary">Add a comment</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</div>

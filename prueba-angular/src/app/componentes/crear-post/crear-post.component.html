@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+    Create Post
+  </div>
+  <div class="card-body">
+
+    <form [formGroup]="formularioPosts" (ngSubmit)="enviarDatos()">
+
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text"
+          class="form-control" formControlName="title" aria-describedby="helpId" placeholder="">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Body</label>
+        <input type="text"
+          class="form-control" formControlName="body" aria-describedby="helpId" placeholder="">
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Button group name">
+        <button type="submit" class="btn btn-primary">Create</button>
+        <button routerLink="/listar-posts" type="button" class="btn btn-danger">Cancel</button>
+      </div>
+
+
+    </form>
+
+  </div>
+</div>
